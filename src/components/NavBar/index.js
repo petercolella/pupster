@@ -2,26 +2,52 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => (
-  <nav className="navbar navbar-default">
-    <div className="container-fluid">
-      <div className="navbar-header">
-        <Link to="/" className="navbar-brand">
-          Pupster
-        </Link>
-      </div>
-      <ul className="nav navbar-nav">
-        <li className={window.location.pathname === '/' ? 'active' : null}>
-          <Link to="/">About</Link>
+  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <Link to="/" className="navbar-brand">
+      Pupster
+    </Link>
+    <button
+      className="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon" />
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link
+            to="/"
+            className={
+              window.location.pathname === '/' ? 'nav-link active' : 'nav-link'
+            }>
+            About
+          </Link>
         </li>
-        <li
-          className={
-            window.location.pathname === '/discover' ? 'active' : null
-          }>
-          <Link to="/discover">Discover</Link>
+        <li className="nav-item">
+          <Link
+            to="/discover"
+            className={
+              window.location.pathname === '/discover'
+                ? 'nav-link active'
+                : 'nav-link'
+            }>
+            Discover
+          </Link>
         </li>
-        <li
-          className={window.location.pathname === '/search' ? 'active' : null}>
-          <Link to="/search">Search</Link>
+        <li className="nav-item">
+          <Link
+            to="/search"
+            className={
+              window.location.pathname === '/search'
+                ? 'nav-link active'
+                : 'nav-link'
+            }>
+            Search
+          </Link>
         </li>
       </ul>
     </div>
